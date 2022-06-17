@@ -1,3 +1,6 @@
+
+<img width="245" alt="logo" src="https://user-images.githubusercontent.com/72980673/174237001-bd9cd6f6-9488-47ef-bb58-94cbb3b4e0c5.png">
+
 ## [RApid DeTECHtion](https://arthritis-api.herokuapp.com/)
 
 ## RApid DeTECHtion
