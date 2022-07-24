@@ -38,7 +38,11 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
+
       <h1 class="logo me-auto"><a href="/"><span class="text-success">RA</span>pid De<span class="text-success">TECH</span>tion</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
       <nav id="navbar" class="navbar order-last order-lg-0  ">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Prediction</a></li>
@@ -46,47 +50,75 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+
       <a href="home.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make a</span> Prediction</a>
+
     </div>
   </header><!-- End Header -->
 
+  <!-- ======= Hero Section ======= -->
+  
 
   
 
-  <main id="main" style="background-image: url('../static/img/hero-bg.jpg');">
-<!-- ======= Why Us Section ======= -->
-<section id="why-us" class="why-us mt-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <div class="icon-boxes  justify-content-center">
-            <div class="row d-flex justify-content-center ">
-              <div class="col-lg-12 d-flex align-items-center">
-                <div class="icon-box mt-4 mt-xl-0 shadow-lg" style="width: 600px;">
-                  <h2>Predicted Results</h2>
-                <div class="card shadow-lg  mx-auto" style=' width: 500px; height: auto;'>
-                  <img class="card-img-top mx-auto d-block mt-2 thumbnail" src="{{data[2]}}" alt="Prediction" style="width:50%" height="auto">
-                  <div class="card-body center">
-                    {% if data[0] =='Negative' %}
-                    <h3 class="card-title text-center">Prediction is : <span class="text-success">{{ data[0] }} </span> </h3>
-                    {% else %}
-                    <h3 class="card-title text-center">Prediction is : <span class="text-danger">{{ data[0] }}</span> </h3>
-                    {% endif %}
-                    <p class="card-text text-center">Confidence is  : <b><span data-purecounter-start="0" data-purecounter-end="{{ data[1] }}" data-purecounter-duration="2" data-purecounter-decimals="2" class="purecounter"></span> %</b> </p>
-                    <div class="text-center"><a href="home.html" class="btn btn-primary">Back</a></div> 
-                  </div>
-                </div>
-                  </div>
-                </div>
+
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row mt-5">
+          <div class="col-xl-7   col-lg-7  d-flex justify-content-center align-items-stretch position-relative" >
+            <div class="card shadow-lg">
+              <h2 class="text-center">Results</h2>
+              <img class="card-img-top mx-auto d-block mt-2 thumbnail" src="{{ data[2] }}" alt="Prediction" style="width:50%" height="auto">
+              <div class="card-body center">
+                {% if data[0] =='Negative' %}
+                <h3 class="card-title text-center">Prediction is : <span class="text-success">{{ data[0] }} </span> </h3>
+                {% else %}
+                <h3 class="card-title text-center">Prediction is : <span class="text-danger">{{ data[0] }}</span> </h3>
+                {% endif %}
+                <p class="card-text text-center">Confidence is  : <b><span data-purecounter-start="0" data-purecounter-end="{{ data[1] }}" data-purecounter-duration="2" data-purecounter-decimals="2" class="purecounter"></span> %</b> </p>
+                <div class="text-center"><a href="home.html" class="btn btn-primary">Back</a></div> 
               </div>
             </div>
-          </div><!-- End .content-->
+          </div>
+
+          {% if data[0] =='Negative' %}
+          <div class="col-xl-5  col-lg-5 shadow-lg icon-boxes d-flex flex-column align-items-stretch py-3" style="background-color:#37fb41 ; border-radius:10px ;">
+            <h2 class="text-center">Suggestions</h2>
+            <div class="icon-box">
+              <div class="icon"><i class='bx bxs-info-circle'></i></div>
+              <h4 class="title"><a href="">Tips</a></h4>
+              <p class="description">
+                <b>&#10140;</b> Excercise as much as possible. <br>
+                <b>&#10140;</b> If you feel recurring pains in joints or inflammation, please visit a doctor. <br>
+                <b>&#10140;</b> Improve your mood. <br>
+                <b>&#10140;</b> Have a good sleep.<br>
+                <b>&#10140;</b> Eat a balanced-diet<br>
+                </p>
+            </div>
+          </div>
+            {% else %}
+            <div class="col-xl-5  col-lg-5 shadow-lg icon-boxes d-flex flex-column align-items-stretch py-3" style="background-color:#fb3737 ; border-radius:10px ; color: aliceblue;">
+            <h2 class="text-center">Suggestions</h2>
+            <div class="icon-box">
+              <div class="icon"><i class='bx bxs-injection'></i></div>
+              <h4 class="title text-dark"><a href="">Visit the Doctor</a></h4>
+              <p class="description">
+                <b>&#10140;</b> Please visit a Rheumatologist as soon as possible. <br>
+                <b>&#10140;</b> If you have joint pain and other inflammation please hurry up. <br>
+                <b>&#10140;</b> It’s important to get an accurate diagnosis as soon as possible so you can start treatment.  <br>
+                <b>&#10140;</b> Excercises such as walking, bycycling, swimming can keep your body active. <br>
+                <b>&#10140;</b> Manage your weight. <br>
+                </p>
+            </div>
+            </div>
+            {% endif %}
+
+
+          </div>
         </div>
-      </div>
-    </div>
-  </section><!-- End Why Us Section -->
-   
-  </main><!-- End #main -->
+
+    </section>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -109,7 +141,7 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#departments">Diagnosis</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#faq">FAQ</a></li>
             </ul>
